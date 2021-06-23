@@ -53,7 +53,7 @@ int count_comb2(int n, vector<int> &memory)
 
 int main()
 {
-    freopen("case1.txt", "r", stdin);
+    // freopen("case1.txt", "r", stdin);
     int n;
     cin >> n;
     vector<int> memory(MAX_N, -1);
