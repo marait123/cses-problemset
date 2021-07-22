@@ -21,7 +21,7 @@ struct node
 };
 int main()
 {
-    freopen("case1.txt", "r", stdin);
+    // freopen("case1.txt", "r", stdin);
     int n, m;
     cin >> n >> m;
     vector<vector<char>> grid(n, vector<char>(m));
@@ -53,11 +53,11 @@ int main()
         search_queue.pop();
         int row = current_node.row;
         int col = current_node.col;
-        if (processed[row][col])
-        {
+        // if (processed[row][col])
+        // {
 
-            throw "node is already processed";
-        }
+        //     throw "node is already processed";
+        // }
         processed[row][col] = true;
 
         if (grid[row][col] == 'B')
@@ -101,6 +101,8 @@ int main()
         {
             node n = {row : row - 1, col : col, dir : 'U'};
             parents[row - 1][col] = current_node;
+            processed[row - 1][col] = true;
+
             search_queue.push(n);
         }
         // add left
@@ -109,6 +111,7 @@ int main()
 
             node n = {row : row, col : col - 1, dir : 'L'};
             parents[row][col - 1] = current_node;
+            processed[row][col - 1] = true;
 
             search_queue.push(n);
         }
@@ -119,6 +122,8 @@ int main()
         {
             node n = {row : row + 1, col : col, dir : 'D'};
             parents[row + 1][col] = current_node;
+            processed[row + 1][col] = true;
+
             search_queue.push(n);
         }
 
@@ -128,6 +133,7 @@ int main()
 
             node n = {row : row, col : col + 1, dir : 'R'};
             parents[row][col + 1] = current_node;
+            processed[row][col + 1] = true;
 
             search_queue.push(n);
         }

@@ -44,6 +44,14 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "stack": "cpp",
+        "queue": "cpp",
+        "xstring": "cpp",
+        "set": "cpp",
+        "unordered_set": "cpp",
+        "xutility": "cpp",
+        "xtree": "cpp",
+        "xlocale": "cpp"
     }
 }
